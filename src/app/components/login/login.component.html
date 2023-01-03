@@ -1,0 +1,11 @@
+<div>
+    <canvas id="canvas"></canvas>
+    <form #f="ngForm" (ngSubmit)="OnLogin()" novalidate>
+        <div class="rounded-rectangle">
+            <input class="input-field" type="text" placeholder="Username" name="usrName" [(ngModel)]="usrName" required>
+            <input class="input-field" type="password" placeholder="Password" name="password" [(ngModel)]="password"
+                required>
+            <button class="button" type="submit">Log In</button>
+        </div>
+    </form>
+</div>

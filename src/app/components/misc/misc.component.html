@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="container">
+        <div class="logo-ap">
+            <img src="../../../assets/APLogo.png" alt="Logo del Argentina Programa" id="logo-ap">
+        </div>
+        <div class="hamburger">
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="../../../assets/github.png"
+                    alt="Logo de github, haz click aqui para acceder al github del creador de la pagina" id="git"></a>
+            <a href="#"><img src="../../../assets/linkedin.png"
+                    alt="Logo de linkedin, haz click aqui para acceder al linkedin del creador de la pagina"
+                    id="ln"></a>
+            <a href="#"><img src="../../../assets/twitter.png"
+                    alt="Logo de twitter, haz click aqui para acceder al twitter del creador de la pagina" id="tw"></a>
+            <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged; else LogOut">Log In</button>
+            <ng-template #LogOut>
+                <button type="button" class="btn btn-outline-light" (click)="logout()">Log Out</button>
+            </ng-template>
+        </div>
+    </div>
+</div>

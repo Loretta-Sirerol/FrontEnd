@@ -1,0 +1,10 @@
+div{
+    background: #70B0BF;
+    text-align: center;
+}
+
+@media (max-width: 575px){
+    div{
+        background: #294B68;
+    }
+}

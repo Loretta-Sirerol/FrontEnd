@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6CAFC1;
+}
+
+#logo-ap {
+    width: 150px;
+}
+
+img {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 75px;
+}
+
+button{
+    margin-right: 10px ;
+}
+
+.toggle-button{
+    position: absolute;
+    top: 2.1rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+
+.toggle-button .bar{
+    height: 3px;
+    width: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 575px){
+    .social-media{
+        visibility: hidden;
+    }
+    .toggle-button{
+        display: flex;
+    }
+    .container{
+        flex-direction: column;
+    }
+
+    .social-media.active{
+        animation: 0.75s fadeIn;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+}
