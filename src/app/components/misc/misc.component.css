@@ -20,6 +20,7 @@ button{
 }
 
 .toggle-button{
+    all: unset;
     position: absolute;
     top: 2.1rem;
     right: 1rem;
@@ -31,6 +32,8 @@ button{
 }
 
 .toggle-button .bar{
+    position:relative;
+    right: 0.5rem;
     height: 3px;
     width: 30px;
     background-color: white;
@@ -49,17 +52,6 @@ button{
     }
 
     .social-media.active{
-        animation: 0.75s fadeIn;
-        animation-fill-mode: forwards;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      visibility: visible;
-      opacity: 1;
+        visibility: visible;
     }
 }

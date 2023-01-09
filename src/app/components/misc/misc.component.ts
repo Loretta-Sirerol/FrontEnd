@@ -9,29 +9,26 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class MiscComponent {
 
-  isLogged = false;
+  icons: Element = null as unknown as HTMLElement;
+
+  isLogged: Boolean = false;
 
   constructor(private router: Router, private tokeService: TokenService) { }
 
   ngOnInit(): void {
-    const toggleButton = document.getElementsByClassName('toggle-button')[0];
-    const icons = document.getElementsByClassName('social-media')[0];
-    toggleButton.addEventListener('click', () => {
-      icons.classList.toggle('active')
-    });
 
-    if(this.tokeService.getToken())
-    {
+    this.icons = document.getElementsByClassName('social-media')[0];
+
+    if (this.tokeService.getToken()) {
       this.isLogged = true;
     }
-    else
-    {
+    else {
       this.isLogged = false;
     }
 
   }
 
-  
+
   login(): void {
     this.router.navigate(["auth/login"])
   }
@@ -39,6 +36,10 @@ export class MiscComponent {
   logout(): void {
     this.tokeService.logOut();
     window.location.reload();
+  }
+  
+  magic(): void {
+      this.icons.classList.toggle('active');
   }
 
 }

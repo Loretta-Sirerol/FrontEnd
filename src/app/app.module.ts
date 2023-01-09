@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,7 @@ import { LoginComponent } from './components/login/login.component';
 import { MiscComponent } from './components/misc/misc.component';
 import { StudiesComponent } from './components/studies/studies.component';
 import { WorkExperienceComponent } from './components/work-experience/work-experience.component';
+import { InterceptorService } from './service/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,13 @@ import { WorkExperienceComponent } from './components/work-experience/work-exper
     AppRoutingModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
